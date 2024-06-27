@@ -4,4 +4,3 @@ This project explores AI agents with LLMs to develop investment/trading strategi
 
 ## Collaborators
 - Sunil Sharma
-- Ritabrata Bhattacharyya
