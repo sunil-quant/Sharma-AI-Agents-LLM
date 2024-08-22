@@ -15,12 +15,6 @@ This project explores AI agents with LLMs to develop investment/trading strategi
 - **CONFIG.json**: Contains configuration settings for various LLM models used in the project.
 - **README.md**: This file, providing an overview and instructions for the project.
 
-
-- **autogen_agent_macd_notebook.ipynb**: Main Jupyter notebook that walks through the MACD trading strategy optimization using the multi-agent system. Note: You need to add your OpenAI API key to the CONFIG.json file for it to work correctly.
-- **analysis_vision_models_macd_notebook.ipynb**: Analyzes and observes different LLM vision models (e.g., GPT-4v, LLava) in their ability to interpret the Moving Average Convergence Divergence (MACD) indicator. 
-- **backtest_macd_notebook.ipynb**: Tests the backtesting capability of the MACD trading strategy using historical stock data for YESBANK with the Backtrader framework.
-
-
 ## Setup
 
 ### Prerequisites
@@ -47,3 +41,9 @@ This project explores AI agents with LLMs to develop investment/trading strategi
 Ensure all the necessary packages are installed by running:
 
     python -m pip check
+
+## Jupyter Notebooks
+
+- **autogen_agent_macd_notebook.ipynb**: Walks through the MACD trading strategy optimization using the multi-agent system. Note: You need to add your OpenAI API key to the CONFIG.json file for it to work correctly.
+- **analysis_vision_models_macd_notebook.ipynb**: Analyzes and observes different LLM vision models (e.g., GPT-4v, LLava) in their ability to interpret the Moving Average Convergence Divergence (MACD) indicator.
+- **backtest_macd_notebook.ipynb**: Tests the backtesting capability of the MACD trading strategy using historical stock data for YESBANK with the Backtrader framework.
