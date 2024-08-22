@@ -55,9 +55,9 @@ The notebook has been tested on Binder. However, please note that the Binder lin
 Launch the Notebook
 To use Binder with this notebook, follow these steps:
 
-Go to Binder(https://mybinder.org/).
-Enter the GitHub URL of this repository: https://github.com/sunil-quant/Sharma-AI-Agents-LLM.
-Click on "Launch" to open the notebook.
+- Go to Binder(https://mybinder.org/).
+- Enter the GitHub URL of this repository: https://github.com/sunil-quant/Sharma-AI-Agents-LLM.
+- Click on "Launch" to open the notebook.
 
 Current link for Interactive version of the Jupyter notebook using Binder():
 [![Binder](https://mybinder.org/badge_logo.svg)](https://hub.binder.curvenote.dev/user/sunil-quant-sharma-ai-agents-llm-rr4hyr09/lab/workspaces/auto-W/tree/src/notebooks/autogen_agent_macd_notebook.ipynb)
