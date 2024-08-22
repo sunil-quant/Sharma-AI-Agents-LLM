@@ -57,6 +57,7 @@ To use Binder with this notebook, follow these steps:
 
 - Go to Binder(https://mybinder.org/).
 - Enter the GitHub URL of this repository: https://github.com/sunil-quant/Sharma-AI-Agents-LLM.
+- Specify Git ref (branch, tag, or commit) as 'main'
 - Click on "Launch" to open the notebook.
 
 Current link for Interactive version of the Jupyter notebook using Binder():
