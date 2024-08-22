@@ -38,4 +38,5 @@ This project explores AI agents with LLMs to develop investment/trading strategi
 3. **Verify the installation**:
 
 Ensure all the necessary packages are installed by running:
+
     python -m pip check
