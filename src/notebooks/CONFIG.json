@@ -1,7 +1,7 @@
 [
     {
         "model": "gpt-4o",
-        "api_key": "<add your OPENAI API key>"
+        "api_key": "<OPENAI API key>"
     },
     {
         "model": "xtuner/llava-llama-3-8b-v1_1-gguf/llava-llama-3-8b-v1_1-int4.gguf:0",
