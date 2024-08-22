@@ -1,0 +1,8 @@
+# Core Libraries
+backtrader==1.9.78.123
+matplotlib==3.9.0
+matplotlib-inline==0.1.7
+mplfinance==0.12.10b0
+numpy==1.26.4
+pandas==2.2.2
+pyautogen==0.2.31
