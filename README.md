@@ -52,7 +52,6 @@ Ensure all the necessary packages are installed by running:
 
 The notebook has been tested on Binder. However, please note that the Binder link is temporary. To ensure continuous access, you may need to add the GitHub repository URL to Binder or run the notebook locally.
 
-Launch the Notebook
 To use Binder with this notebook, follow these steps:
 
 - Go to Binder(https://mybinder.org/).
