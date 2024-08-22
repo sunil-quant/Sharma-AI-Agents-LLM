@@ -1,12 +1,15 @@
 # agents.py
 
-from textwrap import dedent
-from autogen import AssistantAgent, UserProxyAgent, register_function
-from autogen.agentchat.contrib.multimodal_conversable_agent import MultimodalConversableAgent
-from autogen.cache import Cache
-from tools import plot_macd_tool, display_image_tool, backtest_macd_tool, get_backtesting_result
-from config import file_path, start_date, end_date
+# This file defines the setup for a multi-agent system focused on optimizing a trading strategy using MACD indicators.
 
+from textwrap import dedent  # For formatting multiline strings
+from autogen import AssistantAgent, UserProxyAgent, register_function  # Core classes and functions for agent creation
+from autogen.agentchat.contrib.multimodal_conversable_agent import MultimodalConversableAgent  # For multimodal agents
+from autogen.cache import Cache  # For caching results
+from tools import plot_macd_tool, display_image_tool, backtest_macd_tool, get_backtesting_result  # Import tools used by the agents
+from config import file_path, start_date, end_date  # Import configuration variables
+
+# Initialize the Trade Strategy Optimizer agent, which is responsible for optimizing the MACD trading strategy
 trade_strategy_optimizer = MultimodalConversableAgent(
     name="Trade_Strategy_Optimizer",
     system_message=dedent(
@@ -26,9 +29,10 @@ trade_strategy_optimizer = MultimodalConversableAgent(
         10. Reply TERMINATE when you think the strategy is good enough.
         """
     ),
-    llm_config=llm_config_4o,
+    llm_config=llm_config_4o,  # Configuration for the language model used by this agent
 )
 
+# Initialize the Backtesting Specialist agent, which handles the plotting and backtesting tasks
 backtesting_specialist = AssistantAgent(
     name="Backtesting_Specialist",
     system_message=dedent(
@@ -40,18 +44,19 @@ backtesting_specialist = AssistantAgent(
 
         For both tasks, after the tool calling, you should do as follows:
             1. Display the created and saved image file using the `display_image_tool` tool.
-            2. Call the `get_backtesting_result` tool to retrieve the backtesting results,and store it in stored in the global variable `backtesting_result`.
+            2. Call the `get_backtesting_result` tool to retrieve the backtesting results, and store it in the global variable `backtesting_result`.
             3. Provide a summary of the backtesting results including key metrics such as total returns, drawdown, Sharpe ratio, and trade analysis.
-            4. Assume the saved image file is "test.png" and summary of backtesting results is stored in the global variable. Share both the image and `backtesting_result` ask to Optimize the MACD parameters (short_ema, long_ema, and signal_ema) based on this image <img test.png>, and based on Backtest results in the `backtesting_result` variable. TERMINATE."
+            4. Assume the saved image file is "test.png" and summary of backtesting results is stored in the global variable. Share both the image and `backtesting_result` and ask to optimize the MACD parameters (short_ema, long_ema, and signal_ema) based on this image <img test.png>, and based on Backtest results in the `backtesting_result` variable. TERMINATE."
         """
     ),
-    llm_config=llm_config,
+    llm_config=llm_config,  # Configuration for the language model used by this agent
 )
 
+# UserProxyAgent to execute commands sent by the Backtesting Specialist agent
 backtesting_specialist_executor = UserProxyAgent(
     name="Backtesting_Specialist_Executor",
-    human_input_mode="NEVER",
-    is_termination_msg=lambda x: x.get("content", "") and x.get("content", "").find("TERMINATE") >= 0,
+    human_input_mode="NEVER",  # The agent operates automatically without human input
+    is_termination_msg=lambda x: x.get("content", "") and x.get("content", "").find("TERMINATE") >= 0,  # Checks if the message contains a termination command
     code_execution_config={
         "last_n_messages": 1,
         "work_dir": "coding",
@@ -59,6 +64,7 @@ backtesting_specialist_executor = UserProxyAgent(
     },
 )
 
+# Register the plotting function with the Backtesting Specialist agent
 register_function(
     plot_macd_tool,
     caller=backtesting_specialist,
@@ -67,6 +73,7 @@ register_function(
     description="Plots the MACD chart with EMA, MACD histogram, and signals, and saves the plot to a file.",
 )
 
+# Register the backtesting function with the Backtesting Specialist agent
 register_function(
     backtest_macd_tool,
     caller=backtesting_specialist,
@@ -75,6 +82,7 @@ register_function(
     description="Backtests a MACD trading strategy on historical stock data from a CSV file.",
 )
 
+# Register the image display function with the Backtesting Specialist agent
 register_function(
     display_image_tool,
     caller=backtesting_specialist,
@@ -83,6 +91,7 @@ register_function(
     description="Displays an image from the given file path using IPython.display.",
 )
 
+# Register the function to retrieve backtesting results with the Backtesting Specialist agent
 register_function(
     get_backtesting_result,
     caller=backtesting_specialist,
@@ -91,6 +100,7 @@ register_function(
     description="Retrieves the backtesting results stored in the global variable."
 )
 
+# Function to simulate reflection on the optimizer's response,  used for debugging/logging
 def reflection_message_analyst(recipient, messages, sender, config):
     print("Reflecting Trade_Strategy_Optimizer's response ...")
     last_msg = recipient.chat_messages_for_summary(sender)[-1]["content"]
