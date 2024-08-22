@@ -1,0 +1,41 @@
+[
+    {
+        "model": "gpt-4o",
+        "api_key": "<add your OPENAI API key>"
+    },
+    {
+        "model": "xtuner/llava-llama-3-8b-v1_1-gguf/llava-llama-3-8b-v1_1-int4.gguf:0",
+        "api_key": "not_needed",
+        "base_url": "http://127.0.0.1:1234/v1"
+    },
+    {
+        "model": "abetlen/BakLLaVA-1-GGUF:0",
+        "api_key": "not_needed",
+        "base_url": "http://127.0.0.1:1234/v1"
+    },
+    {
+        "model": "TheBloke/phi-2-GGUF/phi-2.Q4_K_S.gguf:0",
+        "api_key": "not_needed",
+        "base_url": "http://127.0.0.1:1234/v1"
+    },
+    {
+        "model": "TheBloke/Mistral-7B-Instruct-v0.1-GGUF/mistral-7b-instruct-v0.1.Q6_K.gguf:0",
+        "api_key": "not_needed",
+        "base_url": "http://127.0.0.1:1234/v1"
+    },
+    {
+        "model": "llava",
+        "api_key": "not_needed",
+        "base_url": "http://127.0.0.1:11434/v1"
+    },
+    {
+        "model": "llama3",
+        "api_key": "not_needed",
+        "base_url": "http://127.0.0.1:11434/v1"
+    },
+    {
+        "model": "gemma",
+        "api_key": "not_needed",
+        "base_url": "http://127.0.0.1:11434/v1"
+    }
+]
