@@ -15,6 +15,7 @@ This project explores AI agents with LLMs to develop investment/trading strategi
 - **analysis_vision_models_macd_notebook.ipynb**: Analyzes and observes different LLM vision models (e.g., GPT-4v, LLava) in their ability to interpret the Moving Average Convergence Divergence (MACD) indicator. 
 - **backtest_macd_notebook.ipynb**: Tests the backtesting capability of the MACD trading strategy using historical stock data for YESBANK with the Backtrader framework.
 - **requirements.txt**: Lists the Python dependencies required to run the project.
+- **CONFIG.json**: Contains configuration settings for various LLM models used in the project.
 - **README.md**: This file, providing an overview and instructions for the project.
 
 
