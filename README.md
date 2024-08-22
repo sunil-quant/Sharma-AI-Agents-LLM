@@ -54,4 +54,4 @@ Interactive version of the Jupyter notebook using Binder:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://hub.binder.curvenote.dev/user/sunil-quant-sharma-ai-agents-llm-rr4hyr09/lab/workspaces/auto-W/tree/src/notebooks/autogen_agent_macd_notebook.ipynb)
 
-Note: You need to add your OpenAI API key to the CONFIG.json file for it to work correctly.
+Note: Need OpenAI API key in the CONFIG.json file for it to work correctly.
