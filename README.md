@@ -47,3 +47,11 @@ Ensure all the necessary packages are installed by running:
 - **autogen_agent_macd_notebook.ipynb**: Walks through the MACD trading strategy optimization using the multi-agent system. Note: You need to add your OpenAI API key to the CONFIG.json file for it to work correctly.
 - **analysis_vision_models_macd_notebook.ipynb**: Analyzes and observes different LLM vision models (e.g., GPT-4v, LLava) in their ability to interpret the Moving Average Convergence Divergence (MACD) indicator.
 - **backtest_macd_notebook.ipynb**: Tests the backtesting capability of the MACD trading strategy using historical stock data for YESBANK with the Backtrader framework.
+
+## Launch the Notebook
+
+Interactive version of the Jupyter notebook using Binder:
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://hub.binder.curvenote.dev/user/sunil-quant-sharma-ai-agents-llm-rr4hyr09/lab/workspaces/auto-W/tree/src/notebooks/autogen_agent_macd_notebook.ipynb)
+
+Note: You need to add your OpenAI API key to the CONFIG.json file for it to work correctly.
